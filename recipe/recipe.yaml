@@ -1,0 +1,46 @@
+schema_version: 1
+
+context:
+  version: "1.7.5"
+
+package:
+  name: openmeteo_requests
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/o/openmeteo_requests/openmeteo_requests-${{ version }}.tar.gz
+  sha256: 5557b5df957aa00f5e673d85ddc47f8b5bcadde6c72a98c0ec1999b538db39f9
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - niquests >=3.15.2
+    - openmeteo-sdk >=1.22.0
+
+tests:
+  - python:
+      imports:
+        - openmeteo_requests
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: Open-Meteo Python Library
+  license: MIT
+  license_file:
+    - LICENSE
+  homepage: https://pypi.org/project/openmeteo-requests/
+  documentation: https://github.com/open-meteo/python-requests/tree/main
+
+extra:
+  recipe-maintainers:
+    - akrherz
