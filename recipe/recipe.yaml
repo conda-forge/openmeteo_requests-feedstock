@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.7.5"
+  version: "1.7.6"
 
 package:
   name: openmeteo_requests
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/o/openmeteo_requests/openmeteo_requests-${{ version }}.tar.gz
-  sha256: 5557b5df957aa00f5e673d85ddc47f8b5bcadde6c72a98c0ec1999b538db39f9
+  sha256: ae6778e4b46f20402d056fb1d25ea0e312eb06df5df295e7cadbfd125a5d7426
 
 build:
   number: 0
